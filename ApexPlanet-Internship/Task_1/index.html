@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Productivity Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   
+    <div class="hero">
+        <h1 class="title">🚀 Smart Productivity Tracker</h1>
+        <p class="tagline">Plan. Focus. Achieve.</p>
+    </div>
+
+    
+    <div class="app-container">
+
+        <p id="quote">Stay focused and never give up 💪</p>
+
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Enter your task...">
+            <button onclick="addTask()">Add</button>
+        </div>
+
+        <h3>Total Tasks: <span id="taskCount">0</span></h3>
+
+        <ul id="taskList"></ul>
+
+        <div class="buttons">
+            <button onclick="showMessage()">Motivate Me 💡</button>
+            <button onclick="toggleTheme()">🌙 Toggle Theme</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
