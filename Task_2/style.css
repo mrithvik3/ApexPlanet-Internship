@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* HEADER */
+.header {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* FORM CARD */
+.form-container {
+    width: 650px;
+    margin: -40px auto 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* INPUT GROUP */
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* LABEL */
+label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #111;
+    outline: none;
+}
+
+/* GENDER */
+.gender {
+    margin-top: 15px;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 6px;
+    background: #111;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #333;
+}
+
+/* CARD */
+.card {
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+/* DELETE */
+.delete {
+    margin-top: 10px;
+    background: #e53935;
+}
+
+.delete:hover {
+    background: #c62828;
+}
+
+/* ERROR */
+#error {
+    color: red;
+    margin-top: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+    .form-container {
+        width: 90%;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

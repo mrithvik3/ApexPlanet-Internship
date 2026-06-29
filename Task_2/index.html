@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Record Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<!-- HEADER -->
+<div class="header">
+    <h1>Student Record Manager</h1>
+    <p>Manage student records efficiently</p>
+</div>
+
+<!-- FORM -->
+<div class="form-container">
+
+    <h2>Student Information</h2>
+
+    <form id="studentForm">
+
+        <div class="grid">
+
+            <div class="input-group">
+                <label>First Name</label>
+                <input type="text" id="fname" placeholder="Enter First Name">
+            </div>
+
+            <div class="input-group">
+                <label>Last Name</label>
+                <input type="text" id="lname" placeholder="Enter Last Name">
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="Enter Email">
+            </div>
+
+            <div class="input-group">
+                <label>Department</label>
+                <input type="text" id="course" placeholder="Enter Department">
+            </div>
+
+            <div class="input-group">
+                <label>Date of Birth</label>
+                <input type="date" id="dob">
+            </div>
+
+            
+
+        </div>
+
+        <div class="gender">
+            <label>Gender</label><br>
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+        </div>
+
+        <button type="submit">Add Student</button>
+
+        <p id="error"></p>
+
+    </form>
+
+</div>
+
+<!-- STUDENT LIST -->
+<div class="form-container">
+    <h2>Student List</h2>
+    <div id="studentList" class="grid"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
