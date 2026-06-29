@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <link rel="stylesheet" href="style.css" />
+</head> 
+
+<body>
+  <main class="page-shell">
+    <header class="intro card">
+      <h1>Responsive layout with a carousel, quiz, and API data.</h1>
+      <p class="lede">
+        This page is built with plain HTML, CSS media queries, and a little JavaScript.
+      </p>
+      <div class="hero-actions">
+        <a href="#carousel" class="primary-btn">Go to carousel</a>
+        <a href="#quiz" class="secondary-btn">Go to quiz</a>
+      </div>
+    </header>
+
+    <section class="card note-row">
+      <div>
+        <span class="small-label">Responsive</span>
+        <strong>Works on mobile, tablet, and desktop</strong>
+      </div>
+      <div>
+        <span class="small-label">JavaScript</span>
+        <strong>Carousel and quiz interactions</strong>
+      </div>
+      <div>
+        <span class="small-label">API</span>
+        <strong>Fetches live data on demand</strong>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card" id="carousel">
+        <p class="eyebrow">Carousel</p>
+        <h2>Move through the slides with buttons or dots.</h2>
+        <div class="carousel">
+          <div class="carousel-stage" aria-live="polite">
+            <img id="carouselImage" alt="Carousel slide" />
+            <div class="carousel-caption">
+              <strong id="carouselTitle"></strong>
+              <p id="carouselDescription"></p>
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <button id="prevSlide" type="button">Previous</button>
+            <div class="dots" id="slideDots" aria-label="Carousel navigation"></div>
+            <button id="nextSlide" type="button">Next</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" id="quiz">
+        <p class="eyebrow">Quiz</p>
+        <h2>Test your knowledge on web development topics.</h2>
+        <div class="quiz" id="quizApp">
+          <div id="topicSelector" class="topic-selector">
+            <p class="topic-intro">Select a topic to begin the quiz:</p>
+            <div class="topic-buttons">
+              <button type="button" class="topic-btn" data-topic="html">
+                <span class="topic-icon">🏗️</span>
+                <span class="topic-name">HTML</span>
+              </button>
+              <button type="button" class="topic-btn" data-topic="css">
+                <span class="topic-icon">🎨</span>
+                <span class="topic-name">CSS</span>
+              </button>
+              <button type="button" class="topic-btn" data-topic="python">
+                <span class="topic-icon">🐍</span>
+                <span class="topic-name">Python</span>
+              </button>
+              <button type="button" class="topic-btn" data-topic="javascript">
+                <span class="topic-icon">⚡</span>
+                <span class="topic-name">JavaScript</span>
+              </button>
+            </div>
+          </div>
+          <div id="quizContent" class="quiz-content" style="display: none;">
+            <div class="quiz-meta">
+              <span id="questionCounter"></span>
+              <span id="scoreCounter"></span>
+            </div>
+            <h3 id="questionText"></h3>
+            <div class="answers" id="answerList"></div>
+            <div class="quiz-actions">
+              <button id="quizNext" type="button">Check answer</button>
+              <button id="quizRestart" type="button" class="ghost-btn">Change topic</button>
+            </div>
+            <p id="quizFeedback" class="feedback"></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="card api-card" id="api">
+        <p class="eyebrow">API</p>
+        <h2>Fetch a fresh joke from a public endpoint.</h2>
+        <p class="api-label">Live response</p>
+        <blockquote id="jokeText">Loading a fresh joke...</blockquote>
+        <button id="refreshJoke" type="button">Fetch another joke</button>
+        <p id="apiStatus" class="status"></p>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
