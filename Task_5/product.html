@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Product</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="store-header"><div class="container"><a href="index.html">← Back</a></div></header>
+  <main class="container">
+    <div id="productRoot"></div>
+  </main>
+  <script>
+    // standalone product details page — ES5-friendly version
+    var PRODUCTS = [
+      { id: 'p1', title: 'Minimal Headphones', price: 59.99, desc: 'Comfortable on-ear headphones with clear sound.' },
+      { id: 'p2', title: 'Smart Speaker', price: 129.0, desc: 'Compact smart speaker with voice assistant.' },
+      { id: 'p3', title: 'Wireless Charger', price: 29.5, desc: 'Fast wireless charging pad.' },
+      { id: 'p4', title: 'Travel Backpack', price: 89.0, desc: 'Water-resistant everyday backpack.' },
+      { id: 'p5', title: 'Coffee Mug', price: 12.75, desc: 'Ceramic mug with insulated cover.' },
+      { id: 'p6', title: 'Desk Lamp', price: 39.99, desc: 'Adjustable LED desk lamp with warm light.' }
+    ];
+
+    var params = (function(){ try { return new URLSearchParams(location.search); } catch(e){ return { get: function(){ return null; } }; } })();
+    var id = params.get('id');
+    var root = document.getElementById('productRoot');
+    var p = (function(){
+      for(var i=0;i<PRODUCTS.length;i++){ if(PRODUCTS[i].id===id) return PRODUCTS[i]; }
+      return PRODUCTS[0];
+    })();
+
+    root.innerHTML = '<article class="product" style="display:block">' +
+      '<img class="product-image" src="' + (p.img || (function(){
+        var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480">' +
+          '<rect width="100%" height="100%" fill="#20272d"/>' +
+          '<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="28" fill="#aab6c2">' + p.title + '</text>' +
+        '</svg>';
+        return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+      })()) + '" alt="' + p.title + '" />' +
+      '<h2>' + p.title + '</h2>' +
+      '<p class="muted">' + p.desc + '</p>' +
+      '<div class="price">$' + p.price.toFixed(2) + '</div>' +
+      '<div class="actions" style="margin-top:18px">' +
+        '<button class="btn primary" id="add">Add to cart</button>' +
+        '<a class="btn ghost" href="index.html">Back to shop</a>' +
+      '</div>' +
+    '</article>';
+
+    var addBtn = document.getElementById('add');
+    if (addBtn) addBtn.addEventListener('click', function(){
+      var cart = {};
+      try { cart = JSON.parse(localStorage.getItem('capstone-cart') || '{}'); } catch(e) { cart = {}; }
+      cart[p.id] = (cart[p.id] || 0) + 1;
+      localStorage.setItem('capstone-cart', JSON.stringify(cart));
+      alert('Added to cart');
+    });
+  </script>

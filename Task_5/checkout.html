@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout — Capstone Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="store-header"><div class="container"><a href="index.html">← Continue shopping</a></div></header>
+  <main class="container">
+    <section class="hero">
+      <h2>Checkout</h2>
+      <p class="lead">Fill in the form below to complete this mock checkout (no real payments).</p>
+    </section>
+
+    <section class="panel">
+      <form id="checkoutForm" novalidate>
+        <div style="display:grid;gap:12px">
+          <label>
+            Full name
+            <input id="name" name="name" type="text" autocomplete="name" required aria-required="true" />
+          </label>
+          <label>
+            Email
+            <input id="email" name="email" type="email" autocomplete="email" required aria-required="true" />
+          </label>
+          <label>
+            Shipping address
+            <input id="address" name="address" type="text" autocomplete="street-address" required aria-required="true" />
+          </label>
+          <label>
+            Card (mock)
+            <input id="card" name="card" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="4242 4242 4242 4242" required aria-required="true" />
+          </label>
+          <div style="display:flex;gap:12px;align-items:center">
+            <button type="submit" class="btn primary">Place order</button>
+            <button type="button" id="cancelBtn" class="btn ghost">Cancel</button>
+          </div>
+          <p id="checkoutMsg" class="muted" aria-live="polite"></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="checkout.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shopify</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+  
+    .store-header{border-bottom:1px solid rgba(255,255,255,0.04);background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+    .store-header .container{display:flex;align-items:center;justify-content:space-between}
+    .brand{margin:0;font-weight:700}
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#products">Skip to products</a>
+  <header class="store-header">
+    <div class="container">
+      <h1 class="brand">Shopify</h1>
+      <nav class="top-actions">
+        <a href="../index.html">Back</a>
+        <a href="cart.html" class="cart-link" aria-label="Open cart page">Cart (<span id="cartCount">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Featured Products</h2>
+     
+    </section>
+
+    <section id="products" class="products-grid" aria-live="polite"></section>
+  </main>
+
+  <script src="cart.js" defer></script>
+  <script src="products.js" defer></script>
+</body>
+</html>

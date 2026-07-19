@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cart — Capstone Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="store-header">
+    <div class="container">
+      <h1 class="brand">Capstone Store</h1>
+      <nav class="top-actions">
+        <a href="index.html">Back to shop</a>
+        <a href="checkout.html" class="cart-link">Checkout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Your Cart</h2>
+      <p class="lead">Review items before checking out.</p>
+    </section>
+
+    <section id="cartPane" class="cart-pane page-cart" role="region" aria-label="Cart items" tabindex="-1">
+      <div class="cart-inner">
+        <header class="cart-head">
+          <h3 id="cartTitle">Items in your cart</h3>
+          <a href="index.html">Continue shopping</a>
+        </header>
+        <div id="cartItems" class="cart-items"></div>
+        <footer class="cart-footer">
+          <div class="cart-total">Total: $<span id="cartTotal">0.00</span></div>
+          <button id="checkoutBtn" class="btn primary">Checkout</button>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script src="cart.js" defer></script>
+  <script src="products.js" defer></script>
+</body>
+</html>
